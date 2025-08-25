@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -739,6 +739,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#controller-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller CLI
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -932,6 +941,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#controller-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller CLI
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1055,6 +1073,65 @@ with the pipeline controller easier.</p>
 <li>Access sample jupyter notebooks and ViewDefinition editor</li>
 </ul>
 <p><img alt="Web Control Panel" src="../images/pipelines_control_panel.png" /></p>
+<h2 id="controller-cli">Controller CLI</h2>
+<p>This is a simple command-line interface (CLI) tool that interacts with the pipeline controller. It has most of the functionality available in the pipeline Web Control Panel enabling one to run the pipelines, view configuration settings, manage the data warehouse snaphots and other pipeline operations.</p>
+<p>The CLI tool is packaged using setup tools and exposes the application via the <code>controller</code> utility command.</p>
+<p>You can get the list of available commands by running with the help flags <code>-h</code> or<code>--help</code>. See sample output below.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usage:<span class="w"> </span>controller<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>url<span class="w"> </span><span class="o">{</span>config,next,status,run,tables,logs,dwh<span class="o">}</span><span class="w"> </span>...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>The<span class="w"> </span>CLI<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>fhir-data-pipes
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>positional<span class="w"> </span>arguments:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>url<span class="w">                   </span>url<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pipeline<span class="w"> </span>controller<span class="err">&#39;</span>s<span class="w"> </span>REST<span class="w"> </span>API
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="o">{</span>config,next,status,run,tables,logs,dwh<span class="o">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                        </span>dwh,<span class="w"> </span>next,<span class="w"> </span>status,<span class="w"> </span>run,<span class="w"> </span>config,<span class="w"> </span>logs,<span class="w"> </span>tables<span class="w"> </span>are<span class="w"> </span>the<span class="w"> </span>available<span class="w"> </span>commands.
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>config<span class="w">              </span>show<span class="w"> </span>config<span class="w"> </span>values
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span>next<span class="w">                </span>show<span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>scheduled<span class="w"> </span>run
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>status<span class="w">              </span>show<span class="w"> </span>the<span class="w"> </span>status<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>pipeline
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span>run<span class="w">                 </span>run<span class="w"> </span>the<span class="w"> </span>pipeline
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>tables<span class="w">              </span>create<span class="w"> </span>resource<span class="w"> </span>tables
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span>logs<span class="w">                </span>show<span class="w"> </span>logs
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>dwh<span class="w">                 </span>show<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>dwh<span class="w"> </span>snapshots
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>optional<span class="w"> </span>arguments:
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+</code></pre></div>
+Show config values</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config
+</code></pre></div>
+Show specific config value</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config<span class="w"> </span>--config-name<span class="w"> </span>&lt;config<span class="w"> </span>key&gt;
+</code></pre></div>
+Show the next scheduled run</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>next
+</code></pre></div>
+Show the status of the pipeline</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>status
+</code></pre></div>
+Run the pipeline</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>run<span class="w"> </span>--mode<span class="w"> </span>&lt;run<span class="w"> </span>mode&gt;
+</code></pre></div>
+<p><strong>Note:</strong> To run a pipeline you must supply a run mode using the <code>-m</code> or
+<code>--mode</code> flag. The value of mode can be either of <code>full</code>, <code>incremental</code> or
+<code>views</code>.
+Create resource tables</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>tables
+</code></pre></div>
+Download error logs</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>logs<span class="w"> </span>--download
+</code></pre></div>
+<p>You can pass an optional file name for the downloaded file. The default is <code>error.log</code>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>logs<span class="w"> </span>--download<span class="w"> </span>--filename<span class="w"> </span>&lt;filename&gt;
+</code></pre></div>
+Show a list of dwh snapshots</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>dwh
+</code></pre></div>
+<p>Delete a specific snapshot</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>dwh<span class="w"> </span>delete<span class="w"> </span>--snapshot-id<span class="w"> </span>&lt;snapshot<span class="w"> </span>id&gt;
+</code></pre></div>
+<p><strong>Note:</strong> You can get the snapshot id by running the <code>controller &lt;url&gt; dwh</code>
+first. A valid snapshot-id is the full id as shown in the list e.g.
+<code>dwh/controller_DEV_DWH_TIMESTAMP_2025_08_14T17_47_15_357080Z</code></p>
 
 
 
@@ -1156,10 +1233,10 @@ with the pipeline controller easier.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs.sticky", "navigation.section", "toc.follow", "navigation.top", "navigation.path", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs.sticky", "navigation.section", "toc.follow", "navigation.top", "navigation.path", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
