@@ -1074,10 +1074,15 @@ with the pipeline controller easier.</p>
 </ul>
 <p><img alt="Web Control Panel" src="../images/pipelines_control_panel.png" /></p>
 <h2 id="controller-cli">Controller CLI</h2>
-<p>This is a simple command-line interface (CLI) tool that interacts with the pipeline controller. It has most of the functionality available in the pipeline Web Control Panel enabling one to run the pipelines, view configuration settings, manage the data warehouse snaphots and other pipeline operations.</p>
-<p>The CLI tool is packaged using setup tools and exposes the application via the <code>controller</code> utility command.</p>
-<p>You can get the list of available commands by running with the help flags <code>-h</code> or<code>--help</code>. See sample output below.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usage:<span class="w"> </span>controller<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>url<span class="w"> </span><span class="o">{</span>config,next,status,run,tables,logs,dwh<span class="o">}</span><span class="w"> </span>...
+<p>This is a simple command-line interface (CLI) tool that interacts with the
+pipeline controller. It has most of the functionality available in the pipeline
+Web Control Panel enabling one to run the pipelines, view configuration
+settings, manage the data warehouse snaphots and other pipeline operations.</p>
+<p>The CLI tool is packaged using setup tools and exposes the application via the
+<code>controller</code> utility command.</p>
+<p>You can get the list of available commands by running with the help flags <code>-h</code>
+or<code>--help</code>. See sample output below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>usage:<span class="w"> </span>controller<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span>url<span class="w"> </span><span class="o">{</span>config,next,status,run,tables,logs,dwh<span class="o">}</span><span class="w"> </span>...
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>The<span class="w"> </span>CLI<span class="w"> </span>tool<span class="w"> </span><span class="k">for</span><span class="w"> </span>fhir-data-pipes
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -1096,34 +1101,34 @@ with the pipeline controller easier.</p>
 <a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>optional<span class="w"> </span>arguments:
 <a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div>
-Show config values</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config
+<p>Show config values</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config
 </code></pre></div>
-Show specific config value</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config<span class="w"> </span>--config-name<span class="w"> </span>&lt;config<span class="w"> </span>key&gt;
+<p>Show specific config value</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>config<span class="w"> </span>--config-name<span class="w"> </span>&lt;config<span class="w"> </span>key&gt;
 </code></pre></div>
-Show the next scheduled run</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>next
+<p>Show the next scheduled run</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>next
 </code></pre></div>
-Show the status of the pipeline</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>status
+<p>Show the status of the pipeline</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>status
 </code></pre></div>
-Run the pipeline</p>
+<p>Run the pipeline</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>run<span class="w"> </span>--mode<span class="w"> </span>&lt;run<span class="w"> </span>mode&gt;
 </code></pre></div>
 <p><strong>Note:</strong> To run a pipeline you must supply a run mode using the <code>-m</code> or
-<code>--mode</code> flag. The value of mode can be either of <code>full</code>, <code>incremental</code> or
-<code>views</code>.
+<code>--mode</code> flag. The value of mode can be one of <code>full</code>, <code>incremental</code> or <code>views</code>.
 Create resource tables</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>tables
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>tables
 </code></pre></div>
-Download error logs</p>
+<p>Download error logs</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>logs<span class="w"> </span>--download
 </code></pre></div>
-<p>You can pass an optional file name for the downloaded file. The default is <code>error.log</code>.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>logs<span class="w"> </span>--download<span class="w"> </span>--filename<span class="w"> </span>&lt;filename&gt;
+<p>You can pass an optional file name for the downloaded file. The default is
+<code>error.log</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>logs<span class="w"> </span>--download<span class="w"> </span>--filename<span class="w"> </span>&lt;filename&gt;
 </code></pre></div>
-Show a list of dwh snapshots</p>
+<p>Show a list of dwh snapshots</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>dwh
 </code></pre></div>
 <p>Delete a specific snapshot</p>
@@ -1132,6 +1137,10 @@ Show a list of dwh snapshots</p>
 <p><strong>Note:</strong> You can get the snapshot id by running the <code>controller &lt;url&gt; dwh</code>
 first. A valid snapshot-id is the full id as shown in the list e.g.
 <code>dwh/controller_DEV_DWH_TIMESTAMP_2025_08_14T17_47_15_357080Z</code></p>
+<p><strong>Note on CLI Access in Docker container</strong>
+If you are running the pipeline controller in a docker container as defined in ./Dockerfile e.g. such as when using the Single Machine docker compose configuration, you can access the CLI tool by running the following command from the host machine.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container_id<span class="w"> </span>or<span class="w"> </span>container_name&gt;<span class="w"> </span>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</code></pre></div></p>
 
 
 
