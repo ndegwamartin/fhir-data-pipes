@@ -940,15 +940,18 @@ pipelines.</p>
     <a href="https://github.com/google/fhir-data-pipes/blob/master/synthea-hiv/sample_data">sample_data</a>
     to the FHIR server that you brought up using the
     <a href="https://github.com/google/fhir-data-pipes/blob/master/synthea-hiv/README.md#Uploader">Synthea data uploader</a>.</p>
-<p>The uploader requires that you install the <code>uploader</code> module requirements first. You can do this by running:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>./synthea-hiv/uploader/requirements.txt
+<p>The uploader requires that you install the <code>uploader</code> module requirements
+first. You can do this by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>./synthea-hiv/uploader/requirements.txt
 </code></pre></div>
-Please note, it is a good idea to first create a Python <code>virtualenv</code> before running the above command to
-avoid conflicts with other Python packages you may have installed globally. You can do this by running:
+<p>Please note, it is a good idea to first create a Python <code>virtualenv</code> before
+running the above command to avoid conflicts with other Python packages you
+may have installed globally. You can do this by running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>virtualenv<span class="w"> </span>-p<span class="w"> </span>python3.8<span class="w"> </span>venv
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>.<span class="w"> </span>./venv/bin/activate
-</code></pre></div></p>
-<p>Then, you can run the uploader script to upload the synthetic data to the FHIR server.</p>
+</code></pre></div>
+<p>Then, you can run the uploader script to upload the synthetic data to the
+FHIR server.</p>
 <p>For example, to upload to the HAPI FHIR server brought up in the previous
 step, run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>./synthea-hiv/uploader/main.py<span class="w"> </span>HAPI<span class="w"> </span>http://localhost:8091/fhir<span class="w"> </span><span class="se">\</span>

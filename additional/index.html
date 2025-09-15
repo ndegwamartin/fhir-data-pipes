@@ -1137,10 +1137,15 @@ Create resource tables</p>
 <p><strong>Note:</strong> You can get the snapshot id by running the <code>controller &lt;url&gt; dwh</code>
 first. A valid snapshot-id is the full id as shown in the list e.g.
 <code>dwh/controller_DEV_DWH_TIMESTAMP_2025_08_14T17_47_15_357080Z</code></p>
-<p><strong>Note on CLI Access in Docker container</strong>
-If you are running the pipeline controller in a docker container as defined in ./Dockerfile e.g. such as when using the Single Machine docker compose configuration, you can access the CLI tool by running the following command from the host machine.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container_id<span class="w"> </span>or<span class="w"> </span>container_name&gt;<span class="w"> </span>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
-</code></pre></div></p>
+<p><strong>Note on CLI Access in Docker container:</strong> If you are running the pipeline
+controller in a docker container as defined in ./Dockerfile e.g. such as when
+using the Single Machine docker compose configuration, you can access the CLI
+tool by running the following command from the host machine.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;container_id<span class="w"> </span>or<span class="w"> </span>container_name&gt;<span class="w"> </span>/bin/bash
+</code></pre></div>
+<p>And then access the CLI tool as described above.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>controller<span class="w"> </span>&lt;url&gt;<span class="w"> </span>&lt;command&gt;<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
 
 
 
